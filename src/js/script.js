@@ -51,9 +51,28 @@
 //     })
 // }
 
-const btn = document.querySelector("button")
+// const btn = document.querySelector("button")
+//
+// btn.addEventListener("click" , function () {
+//     console.log("Click shod:)")
+// } , {once: true})
 
-btn.addEventListener("click" , function () {
-    console.log("Click shod:)")
-} , {once: true})
+const divElems = document.querySelectorAll("div")
+
+console.log(divElems)
+
+divElems.forEach(function (div, index) {
+    div.addEventListener("click", function (event) {
+        console.log("div " + (index + 1))
+        event.target.style.backgroundColor = "yellow"
+    })
+})
+
+
+
+
+
+
+
+
 
