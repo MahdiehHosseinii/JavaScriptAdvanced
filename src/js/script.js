@@ -65,7 +65,7 @@ divElems.forEach(function (div, index) {
     div.addEventListener("click", function (event) {
         console.log("div " + (index + 1))
         event.target.style.backgroundColor = "yellow"
-    })
+    } , {capture: true})
 })
 
 
