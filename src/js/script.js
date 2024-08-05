@@ -80,9 +80,9 @@
 //     })
 // })
 
-const listItems = document.querySelectorAll("li")
-const inputElem = document.querySelector("input")
-const languagesContainer = document.querySelector(".list")
+// const listItems = document.querySelectorAll("li")
+// const inputElem = document.querySelector("input")
+// const languagesContainer = document.querySelector(".list")
 
 // listItems.forEach(function (listItem) {
 //     listItem.addEventListener("click" , function (event) {
@@ -91,23 +91,78 @@ const languagesContainer = document.querySelector(".list")
 //     })
 // })
 
-languagesContainer.addEventListener("click", function (event) {
-    if (event.target.tagName === "LI") {
-        event.target.remove()
+// languagesContainer.addEventListener("click", function (event) {
+//     if (event.target.tagName === "LI") {
+//         event.target.remove()
+//     }
+// })
+//
+// inputElem.addEventListener("keypress", function (event) {
+//     if (event.keyCode === 13) {
+//         let newLanguageLi = document.createElement("li")
+//
+//         newLanguageLi.innerHTML = event.target.value
+//
+//         languagesContainer.append(newLanguageLi)
+//
+//         inputElem.value = ""
+//     }
+// })
+
+let $ = document
+
+const inputElem = $.querySelector('#input-field')
+const btnSaveElem = $.querySelector('#btn-save')
+const btnDeleteElem = $.querySelector('#btn-delete')
+const colorsBox = $.querySelectorAll('.color-box')
+const notesContainer = $.querySelector('#listed')
+
+notesContainer.addEventListener('click', function (event) {
+    if (event.target.tagName === 'P') {
+        event.target.parentElement.remove()
     }
 })
 
-inputElem.addEventListener("keypress", function (event) {
+colorsBox.forEach(function (colorBox) {
+    colorBox.addEventListener('click', function (event) {
+        let mainColor = event.target.style.backgroundColor
+        inputElem.style.backgroundColor = mainColor
+    })
+})
+
+function generateNewNote() {
+    let newNoteDivElem = $.createElement('div')
+    newNoteDivElem.className = 'card shadow-sm rounded'
+    let inputBg = inputElem.style.backgroundColor
+    newNoteDivElem.style.backgroundColor = inputBg
+
+    let newNotePElem = $.createElement('p')
+    newNotePElem.className = 'card-text p-3'
+    newNotePElem.innerHTML = inputElem.value
+
+    newNoteDivElem.append(newNotePElem)
+
+    notesContainer.append(newNoteDivElem)
+
+    inputElem.value = ''
+    inputElem.style.backgroundColor = '#fff'
+}
+
+btnDeleteElem.addEventListener('click', function () {
+    inputElem.value = ''
+    inputElem.style.backgroundColor = '#fff'
+})
+
+inputElem.addEventListener('keydown', function (event) {
     if (event.keyCode === 13) {
-        let newLanguageLi = document.createElement("li")
+        if (inputElem.value) { // 'dsv' '' ' '
+            generateNewNote()
+        }
 
-        newLanguageLi.innerHTML = event.target.value
-
-        languagesContainer.append(newLanguageLi)
-
-        inputElem.value = ""
     }
 })
+
+btnSaveElem.addEventListener('click', generateNewNote)
 
 
 
