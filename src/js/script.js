@@ -68,16 +68,45 @@
 //     } , {capture: true})
 // })
 
-const divElems = document.querySelectorAll("div")
+// const divElems = document.querySelectorAll("div")
+//
+// console.log(divElems)
+//
+// divElems.forEach(function (div, index) {
+//     div.addEventListener("click", function (event) {
+//         event.stopPropagation()
+//         console.log("div " + (index + 1))
+//         event.target.style.backgroundColor = "yellow"
+//     })
+// })
 
-console.log(divElems)
+const listItems = document.querySelectorAll("li")
+const inputElem = document.querySelector("input")
+const languagesContainer = document.querySelector(".list")
 
-divElems.forEach(function (div, index) {
-    div.addEventListener("click", function (event) {
-        event.stopPropagation()
-        console.log("div " + (index + 1))
-        event.target.style.backgroundColor = "yellow"
-    })
+// listItems.forEach(function (listItem) {
+//     listItem.addEventListener("click" , function (event) {
+//         console.log(event.target)
+//         event.target.remove()
+//     })
+// })
+
+languagesContainer.addEventListener("click", function (event) {
+    if (event.target.tagName === "LI") {
+        event.target.remove()
+    }
+})
+
+inputElem.addEventListener("keypress", function (event) {
+    if (event.keyCode === 13) {
+        let newLanguageLi = document.createElement("li")
+
+        newLanguageLi.innerHTML = event.target.value
+
+        languagesContainer.append(newLanguageLi)
+
+        inputElem.value = ""
+    }
 })
 
 
