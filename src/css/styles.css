@@ -103,7 +103,7 @@ body {
     border: 3px solid green;
 }*/
 
-:root {
+/* :root {
     --detail-color: #D10294;
     --section-color: #616161;
     --white-color: #F8F8FF;
@@ -232,8 +232,6 @@ section:nth-of-type(2) {
     }
 }
 
-/* ITEM */
-
 .within-list {
     cursor: pointer;
 }
@@ -251,7 +249,6 @@ section:nth-of-type(2) {
     cursor: pointer;
 }
 
-/* FIXED LIST OF COLORS */
 #color-select {
     display: flex;
     padding: 5px 10px 0 0;
@@ -263,4 +260,6 @@ section:nth-of-type(2) {
     height: 18px;
     width: 18px;
     margin-left: 5px;
-}
+}*/
+
+
