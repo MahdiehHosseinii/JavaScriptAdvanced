@@ -164,30 +164,59 @@
 //
 // btnSaveElem.addEventListener('click', generateNewNote)
 
+// const btn = document.querySelector("button")
+//
+// function logger(callbackFunc) {
+//     console.log("logged (1)")
+//     callbackFunc()
+// }
+//
+// function logger2() {
+//     console.log("logged (2)")
+// }
+//
+// logger(logger2)
+//
+// function clickHandler() {
+//     console.log("clicked")
+// }
+//
+// btn.addEventListener("click", clickHandler)
+// let numbers = [1, 2, 3, 4, 5, 6]
+//
+// numbers.map(function (item) {
+//     console.log(item)
+// })
 
-const btn = document.querySelector("button")
+// console.log(1)
+// console.log(2)
+// setTimeout(function () {
+//     console.log(3)
+// }, 3000)
+//
+// console.log(4)
+// console.log(5)
 
-function logger(callbackFunc) {
-    console.log("logged (1)")
-    callbackFunc()
+function firstLogs() {
+    console.log(1)
+    console.log(2)
 }
 
-function logger2() {
-    console.log("logged (2)")
+function middleLog(callback) {
+    setTimeout(function () {
+        console.log(3)
+        callback()
+    }, 3000)
 }
 
-logger(logger2)
-
-function clickHandler() {
-    console.log("clicked")
+function lastLogs() {
+    console.log(4)
+    console.log(5)
 }
 
-btn.addEventListener("click", clickHandler)
-let numbers = [1, 2, 3, 4, 5, 6]
+firstLogs()
+middleLog(lastLogs)
 
-numbers.map(function (item) {
-    console.log(item)
-})
 
 
 
