@@ -217,30 +217,39 @@
 // firstLogs()
 // middleLog(lastLogs)
 
-let books = [
-    {id: 1, name: "Bi Shouri", price: 95000},
-    {id: 2, name: "Shahname", price: 120000},
-    {id: 3, name: "Boostan", price: 50000}
-]
+// let books = [
+//     {id: 1, name: "Bi Shouri", price: 95000},
+//     {id: 2, name: "Shahname", price: 120000},
+//     {id: 3, name: "Boostan", price: 50000}
+// ]
+//
+// function addBooks(name, price, callback) {
+//     let newBooks = {
+//         id: books.length + 1,
+//         name: name,
+//         price: price
+//     }
+//     setTimeout(function () {
+//         books.push(newBooks)
+//         callback()
+//     }, 4000)
+// }
+//
+// function logBooks() {
+//     console.log(books)
+// }
+//
+// addBooks("Golestan", "60000", logBooks)
 
-function addBooks(name, price, callback) {
-    let newBooks = {
-        id: books.length + 1,
-        name: name,
-        price: price
-    }
-    setTimeout(function () {
-        books.push(newBooks)
-        callback()
-    }, 4000)
+let testNumber = 100
+function pow(num1, num2) {
+    testNumber = 1000
+    return Math.random() * num1 * num2
+    return num1 ** num2
 }
 
-function logBooks() {
-    console.log(books)
-}
-
-addBooks("Golestan", "60000", logBooks)
-
+console.log(pow(2, 3))
+console.log(testNumber)
 
 
 
