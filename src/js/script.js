@@ -241,17 +241,39 @@
 //
 // addBooks("Golestan", "60000", logBooks)
 
-let testNumber = 100
-function pow(num1, num2) {
-    testNumber = 1000
-    return Math.random() * num1 * num2
-    return num1 ** num2
+// let testNumber = 100
+// function pow(num1, num2) {
+//     testNumber = 1000
+//     return Math.random() * num1 * num2
+//     return num1 ** num2
+// }
+//
+// console.log(pow(2, 3))
+// console.log(testNumber)
+
+let todoInputElem = document.querySelector(".todo-input")
+let todolist = document.querySelector(".todo-list")
+
+function trim(val) {
+    return val.trim()
 }
 
-console.log(pow(2, 3))
-console.log(testNumber)
+function toLowerCase(val) {
+    return val.toLowerCase()
+}
 
+function insertToLi(todoVal) {
+    return "<li>" + todoVal + "</li>"
+}
 
+function addTodo(event) {
+    if (event.charCode === 13) {
+        todolist.insertAdjacentHTML("beforeend", insertToLi(toLowerCase(trim(todoInputElem.value))))
+        todoInputElem.value = ""
+    }
+}
+
+todoInputElem.addEventListener("keypress", addTodo)
 
 
 
