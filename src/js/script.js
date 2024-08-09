@@ -197,25 +197,49 @@
 // console.log(4)
 // console.log(5)
 
-function firstLogs() {
-    console.log(1)
-    console.log(2)
-}
+// function firstLogs() {
+//     console.log(1)
+//     console.log(2)
+// }
+//
+// function middleLog(callback) {
+//     setTimeout(function () {
+//         console.log(3)
+//         callback()
+//     }, 3000)
+// }
+//
+// function lastLogs() {
+//     console.log(4)
+//     console.log(5)
+// }
+//
+// firstLogs()
+// middleLog(lastLogs)
 
-function middleLog(callback) {
+let books = [
+    {id: 1, name: "Bi Shouri", price: 95000},
+    {id: 2, name: "Shahname", price: 120000},
+    {id: 3, name: "Boostan", price: 50000}
+]
+
+function addBooks(name, price, callback) {
+    let newBooks = {
+        id: books.length + 1,
+        name: name,
+        price: price
+    }
     setTimeout(function () {
-        console.log(3)
+        books.push(newBooks)
         callback()
-    }, 3000)
+    }, 4000)
 }
 
-function lastLogs() {
-    console.log(4)
-    console.log(5)
+function logBooks() {
+    console.log(books)
 }
 
-firstLogs()
-middleLog(lastLogs)
+addBooks("Golestan", "60000", logBooks)
 
 
 
