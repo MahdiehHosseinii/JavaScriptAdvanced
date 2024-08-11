@@ -288,27 +288,49 @@
 //
 // showNumber()
 
-function addNewBook(callbackFunc) {
-    codes
+// function addNewBook(callbackFunc) {
+//     codes
+// }
+//
+// function hofExp() {
+//     return function () {
+//         console.log("i am inner function :)")
+//     }
+// }
+//
+// hofExp()()
+//
+// let hofInner = hofExp()
+//
+// hofInner()
+//
+// let numbers = [1, 2, 3, 4, 5]
+//
+// numbers.map(function () {
+//     codes
+// })
+
+
+"use strict"
+
+number = 12
+
+console.log(number)
+
+function showValue(a, a) {
+    //codes
 }
 
-function hofExp() {
-    return function () {
-        console.log("i am inner function :)")
-    }
-}
+NaN = 20
+undefind = 78
 
-hofExp()()
+console.log(010 + 020)
 
-let hofInner = hofExp()
+let eval = 12
 
-hofInner()
+let username = "amir"
 
-let numbers = [1, 2, 3, 4, 5]
-
-numbers.map(function () {
-    codes
-})
+delete username
 
 
 
