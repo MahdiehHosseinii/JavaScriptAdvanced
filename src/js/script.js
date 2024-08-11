@@ -311,27 +311,33 @@
 // })
 
 
-"use strict"
+// "use strict"
+//
+// number = 12
+//
+// console.log(number)
+//
+// function showValue(a, a) {
+//     //codes
+// }
+//
+// NaN = 20
+// undefind = 78
+//
+// console.log(010 + 020)
+//
+// let eval = 12
+//
+// let username = "amir"
+//
+// delete username
 
-number = 12
-
-console.log(number)
-
-function showValue(a, a) {
-    //codes
+function showValue() {
+    "use strict"
+    numberVal = 44
 }
 
-NaN = 20
-undefind = 78
-
-console.log(010 + 020)
-
-let eval = 12
-
-let username = "amir"
-
-delete username
-
+showValue()
 
 
 
