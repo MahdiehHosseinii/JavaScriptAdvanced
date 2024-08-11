@@ -251,29 +251,44 @@
 // console.log(pow(2, 3))
 // console.log(testNumber)
 
-let todoInputElem = document.querySelector(".todo-input")
-let todolist = document.querySelector(".todo-list")
+// let todoInputElem = document.querySelector(".todo-input")
+// let todolist = document.querySelector(".todo-list")
+//
+// function trim(val) {
+//     return val.trim()
+// }
+//
+// function toLowerCase(val) {
+//     return val.toLowerCase()
+// }
+//
+// function insertToLi(todoVal) {
+//     return "<li>" + todoVal + "</li>"
+// }
+//
+// function addTodo(event) {
+//     if (event.charCode === 13) {
+//         todolist.insertAdjacentHTML("beforeend", insertToLi(toLowerCase(trim(todoInputElem.value))))
+//         todoInputElem.value = ""
+//     }
+// }
+//
+// todoInputElem.addEventListener("keypress", addTodo)
 
-function trim(val) {
-    return val.trim()
+
+let number = 37
+
+function showNumber() {
+    let number = 20
+
+    console.log("in function", number)
 }
 
-function toLowerCase(val) {
-    return val.toLowerCase()
-}
+console.log("out of function", number)
 
-function insertToLi(todoVal) {
-    return "<li>" + todoVal + "</li>"
-}
+showNumber()
 
-function addTodo(event) {
-    if (event.charCode === 13) {
-        todolist.insertAdjacentHTML("beforeend", insertToLi(toLowerCase(trim(todoInputElem.value))))
-        todoInputElem.value = ""
-    }
-}
 
-todoInputElem.addEventListener("keypress", addTodo)
 
 
 
