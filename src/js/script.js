@@ -276,20 +276,39 @@
 // todoInputElem.addEventListener("keypress", addTodo)
 
 
-let number = 37
+// let number = 37
+//
+// function showNumber() {
+//     let number = 20
+//
+//     console.log("in function", number)
+// }
+//
+// console.log("out of function", number)
+//
+// showNumber()
 
-function showNumber() {
-    let number = 20
-
-    console.log("in function", number)
+function addNewBook(callbackFunc) {
+    codes
 }
 
-console.log("out of function", number)
+function hofExp() {
+    return function () {
+        console.log("i am inner function :)")
+    }
+}
 
-showNumber()
+hofExp()()
 
+let hofInner = hofExp()
 
+hofInner()
 
+let numbers = [1, 2, 3, 4, 5]
+
+numbers.map(function () {
+    codes
+})
 
 
 
