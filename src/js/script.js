@@ -358,20 +358,49 @@
 // }
 // console.log(generateUser(1, "amir", 23))
 
-let numbers = [1, 60, 43, 39, 78, 90, 24, 5]
+// let numbers = [1, 60, 43, 39, 78, 90, 24, 5]
+//
+// // numbers.forEach(number => console.log(number))
+//
+// let mapDatas = numbers.map(number => number * 2)
+//
+// console.log(mapDatas)
+//
+// let btn = document.querySelector(".btn")
+//
+// btn.addEventListener("click", () => {
+//     btn.style.backgroundColor = "red"
+// })
 
+let numbers = [1, 2, 3, 5, 7, 18]
+//
+// console.log(numbers[1] , numbers[3])
 // numbers.forEach(number => console.log(number))
+//
+// let copyNumbers = numbers
+//
+// copyNumbers.push(90)
+//
+// console.log("numbers:", numbers)
+// console.log("copy numbers:", copyNumbers)
+//
+// console.log(...numbers)
 
-let mapDatas = numbers.map(number => number * 2)
+let copyNumbers = [...numbers]
+//
+// console.log(copyNumbers)
 
-console.log(mapDatas)
+copyNumbers.push(90)
+//
+// console.log("numbers:", numbers)
+// console.log("copy numbers:", copyNumbers)
 
-let btn = document.querySelector(".btn")
+let nums1 = [1, 2, 3, 4]
+let nums2 = [5, 6, 7, 8]
 
-btn.addEventListener("click", () => {
-    btn.style.backgroundColor = "red"
-})
+let allNumbers = [...nums1, 100, ...nums2]
 
+console.log(allNumbers)
 
 
 
