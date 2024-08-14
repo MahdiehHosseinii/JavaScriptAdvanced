@@ -339,24 +339,38 @@
 //
 // showValue()
 
-const sum = (num1, num2) => {
-    let addNumbers = num1 + num2
-    return addNumbers
-}
-console.log(sum(8, 12))
+// const sum = (num1, num2) => {
+//     let addNumbers = num1 + num2
+//     return addNumbers
+// }
+// console.log(sum(8, 12))
+//
+// const pow = (num1, num2) => num1 ** num2
+//
+// console.log(pow(2, 3))
+//
+// const logger = val => console.log(val)
+//
+// logger("test text")
+//
+// const generateUser = (id, name, age = 18) => {
+//     return {id: id, name: name, age: age}
+// }
+// console.log(generateUser(1, "amir", 23))
 
-const pow = (num1, num2) => num1 ** num2
+let numbers = [1, 60, 43, 39, 78, 90, 24, 5]
 
-console.log(pow(2, 3))
+// numbers.forEach(number => console.log(number))
 
-const logger = val => console.log(val)
+let mapDatas = numbers.map(number => number * 2)
 
-logger("test text")
+console.log(mapDatas)
 
-const generateUser = (id, name, age = 18) => {
-    return {id: id, name: name, age: age}
-}
-console.log(generateUser(1, "amir", 23))
+let btn = document.querySelector(".btn")
+
+btn.addEventListener("click", () => {
+    btn.style.backgroundColor = "red"
+})
 
 
 
