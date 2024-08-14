@@ -372,7 +372,7 @@
 //     btn.style.backgroundColor = "red"
 // })
 
-let numbers = [1, 2, 3, 5, 7, 18]
+// let numbers = [1, 2, 3, 5, 7, 18]
 //
 // console.log(numbers[1] , numbers[3])
 // numbers.forEach(number => console.log(number))
@@ -385,22 +385,49 @@ let numbers = [1, 2, 3, 5, 7, 18]
 // console.log("copy numbers:", copyNumbers)
 //
 // console.log(...numbers)
-
-let copyNumbers = [...numbers]
+//
+// let copyNumbers = [...numbers]
 //
 // console.log(copyNumbers)
-
-copyNumbers.push(90)
+//
+// copyNumbers.push(90)
 //
 // console.log("numbers:", numbers)
 // console.log("copy numbers:", copyNumbers)
+//
+// let nums1 = [1, 2, 3, 4]
+// let nums2 = [5, 6, 7, 8]
+//
+// let allNumbers = [...nums1, 100, ...nums2]
+//
+// console.log(allNumbers)
 
-let nums1 = [1, 2, 3, 4]
-let nums2 = [5, 6, 7, 8]
 
-let allNumbers = [...nums1, 100, ...nums2]
+let nums = [2, 4, 1]
 
-console.log(allNumbers)
+function sum(a, b, c) {
+    console.log("a: ", a)
+    console.log("b: ", b)
+    console.log("c: ", c)
+    return a + b + c
+}
+
+console.log(sum(2, 4, 1))
+
+console.log(sum(...nums))
+
+let user = {
+    id: 1,
+    name: "amir",
+    age: 23
+}
+
+let newUser = {...user}
+
+newUser.age = 24
+
+console.log("user: ", user)
+console.log("new user: ", newUser)
 
 
 
