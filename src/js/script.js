@@ -332,14 +332,31 @@
 //
 // delete username
 
-function showValue() {
-    "use strict"
-    numberVal = 44
+// function showValue() {
+//     "use strict"
+//     numberVal = 44
+// }
+//
+// showValue()
+
+const sum = (num1, num2) => {
+    let addNumbers = num1 + num2
+    return addNumbers
 }
+console.log(sum(8, 12))
 
-showValue()
+const pow = (num1, num2) => num1 ** num2
 
+console.log(pow(2, 3))
 
+const logger = val => console.log(val)
+
+logger("test text")
+
+const generateUser = (id, name, age = 18) => {
+    return {id: id, name: name, age: age}
+}
+console.log(generateUser(1, "amir", 23))
 
 
 
