@@ -446,18 +446,39 @@
 //
 // console.log(sum(2, 1, 4, 5, 2, 10))
 
-const sum = (...args) => {
-    console.log("args", args)
 
-    let sumAllArgs = 0
+// const sum = (...args) => {
+//     console.log("args", args)
+//
+//     let sumAllArgs = 0
+//
+//     args.forEach(item => sumAllArgs += item)
+//
+//     return sumAllArgs
+// }
+//
+// console.log(sum(2, 1, 4, 5, 2, 10))
 
-    args.forEach(item => sumAllArgs += item)
 
-    return sumAllArgs
-}
+let user = [1, "ali", 12]
 
-console.log(sum(2, 1, 4, 5, 2, 10))
+// let userId = user[0]
+// let userName = user[1]
+// let userAge = user[2]
 
+let [userId, userName, userAge] = user
+
+// console.log("userId", userId)
+// console.log("userName", userName)
+// console.log("userAge", userAge)
+
+const showNumbers = () => [1, 3, 4, 2, 7, 8]
+
+let [firstNum, , , secondNum, thirdNum] = showNumbers()
+
+console.log(firstNum)
+console.log(secondNum)
+console.log(thirdNum)
 
 
 
