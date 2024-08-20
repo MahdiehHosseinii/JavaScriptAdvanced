@@ -460,25 +460,85 @@
 // console.log(sum(2, 1, 4, 5, 2, 10))
 
 
-let user = [1, "ali", 12]
-
+// let user = [1, "ali", 12]
+//
 // let userId = user[0]
 // let userName = user[1]
 // let userAge = user[2]
-
-let [userId, userName, userAge] = user
-
+//
+// let [userId, userName, userAge] = user
+//
 // console.log("userId", userId)
 // console.log("userName", userName)
 // console.log("userAge", userAge)
+//
+// const showNumbers = () => [1, 3, 4, 2, 7, 8]
+//
+// let [firstNum, , , secondNum, thirdNum] = showNumbers()
+//
+// console.log(firstNum)
+// console.log(secondNum)
+// console.log(thirdNum)
 
-const showNumbers = () => [1, 3, 4, 2, 7, 8]
 
-let [firstNum, , , secondNum, thirdNum] = showNumbers()
+// let user = [1 , "ali" , 21 , "tehran"]
+//
+// let [userId , userName , userAge, userCity = "abhar"] = user
+//
+// console.log(userId)
+// console.log(userName)
+// console.log(userAge)
+// console.log(userCity)
 
-console.log(firstNum)
-console.log(secondNum)
-console.log(thirdNum)
+// let user = {
+//     id:1 ,
+//     name:"amir" ,
+//     age: 22
+// }
+//
+// let id = user.id
+// let name = user.name
+// let age = user.age
+//
+// let {id: id , name , age} = user
+// let {id: userId , name = "amin" , age} = user
+//
+// console.log(userId)
+// console.log(name)
+// console.log(age)
+
+let users = [
+    {id: 1, name: "ali", age: 22, email: "ali@gmail.com"},
+    {id: 2, name: "amir", age: 23, email: "amir@gmail.com"},
+    {id: 3, name: "amin", age: 27, email: "amin@gmail.com"},
+    {id: 4, name: "babak", age: 20, email: "babak@gmail.com"}
+]
+const getUser = userId => {
+
+    let mainUser = users.find(user => user.id == userId)
+
+    return mainUser
+}
+//
+// console.log(getUser(3))
+//
+// let {name: userName , email: userEmail} = getUser(2)
+//
+// console.log("username: " , userName)
+// console.log("user email: " , userEmail)
+
+let userIdInput = document.getElementById("user-id")
+
+userIdInput.addEventListener("keypress", event => {
+    let {keyCode, target: input} = event
+
+    if (keyCode === 13) {
+        let {name, email} = getUser(input.value)
+        console.log("username: ", name)
+        console.log("user email: ", email)
+    }
+})
+
 
 
 
