@@ -506,19 +506,19 @@
 // console.log(userId)
 // console.log(name)
 // console.log(age)
-
-let users = [
-    {id: 1, name: "ali", age: 22, email: "ali@gmail.com"},
-    {id: 2, name: "amir", age: 23, email: "amir@gmail.com"},
-    {id: 3, name: "amin", age: 27, email: "amin@gmail.com"},
-    {id: 4, name: "babak", age: 20, email: "babak@gmail.com"}
-]
-const getUser = userId => {
-
-    let mainUser = users.find(user => user.id == userId)
-
-    return mainUser
-}
+//
+// let users = [
+//     {id: 1, name: "ali", age: 22, email: "ali@gmail.com"},
+//     {id: 2, name: "amir", age: 23, email: "amir@gmail.com"},
+//     {id: 3, name: "amin", age: 27, email: "amin@gmail.com"},
+//     {id: 4, name: "babak", age: 20, email: "babak@gmail.com"}
+// ]
+// const getUser = userId => {
+//
+//     let mainUser = users.find(user => user.id == userId)
+//
+//     return mainUser
+// }
 //
 // console.log(getUser(3))
 //
@@ -526,18 +526,32 @@ const getUser = userId => {
 //
 // console.log("username: " , userName)
 // console.log("user email: " , userEmail)
+//
+// let userIdInput = document.getElementById("user-id")
+//
+// userIdInput.addEventListener("keypress", event => {
+//     let {keyCode, target: input} = event
+//
+//     if (keyCode === 13) {
+//         let {name, email} = getUser(input.value)
+//         console.log("username: ", name)
+//         console.log("user email: ", email)
+//     }
+// })
 
-let userIdInput = document.getElementById("user-id")
 
-userIdInput.addEventListener("keypress", event => {
-    let {keyCode, target: input} = event
+// let type = "fake"
+// let txt = "lorem epsom is " + type
+//
+// console.log(txt)
 
-    if (keyCode === 13) {
-        let {name, email} = getUser(input.value)
-        console.log("username: ", name)
-        console.log("user email: ", email)
-    }
-})
+let type = "fake"
+let txt = `lorem epsom is ${type} => ${Math.pow(5 , 2)}`
+let names = `ali
+amir
+amin`
+
+console.log(names)
 
 
 
