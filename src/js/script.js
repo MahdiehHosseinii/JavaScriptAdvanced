@@ -545,13 +545,47 @@
 //
 // console.log(txt)
 
-let type = "fake"
-let txt = `lorem epsom is ${type} => ${Math.pow(5 , 2)}`
-let names = `ali
-amir
-amin`
+// let type = "fake"
+// let txt = `lorem epsom is ${type} => ${Math.pow(5 , 2)}`
+// let names = `ali
+// amir
+// amin`
+//
+// console.log(names)
 
-console.log(names)
+
+let numbers = [1, 3, 2, 5, 4]
+let userName = "sabzlearn.ir"
+let user = {
+    name: "amir",
+    age: 23,
+}
+
+// for (let property of user) {
+//     console.log(property)
+// }
+
+function sum() {
+    console.log(arguments)
+
+    let allArgSum = 0
+
+    for (let arg of arguments) {
+        allArgSum += arg
+    }
+    return allArgSum
+}
+
+console.log("Sum: ", sum(1, 2, 3, 4))
+
+let liElems = document.getElementsByTagName("li")
+
+for (let li of liElems) {
+    console.log(li)
+    li.addEventListener("click", e => e.target.remove())
+}
+
+console.log(liElems)
 
 
 
