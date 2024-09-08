@@ -588,15 +588,30 @@
 // console.log(liElems)
 
 
-let user = {
-    id: 1,
-    name: "amir",
-    age: 23
-}
+// let user = {
+//     id: 1,
+//     name: "amir",
+//     age: 23
+// }
+//
+// for (let item in user) {
+//     console.log(`user.${item}: ${user[item]}`)
+// }
 
-for (let item in user) {
-    console.log(`user.${item}: ${user[item]}`)
-}
+
+let username = "amir"
+
+console.log(username.padStart(10, "-"))
+
+let size = "5"
+
+console.log(size.padStart(2, "0"))
+
+let phoneNumber = "09352509942"
+let last4Digits = phoneNumber.slice(-4)
+let finalPhoneNumber = last4Digits.padStart(phoneNumber.length, "*")
+
+console.log(finalPhoneNumber)
 
 
 
