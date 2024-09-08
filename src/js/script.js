@@ -599,19 +599,25 @@
 // }
 
 
-let username = "amir"
+// let username = "amir"
+//
+// console.log(username.padStart(10, "-"))
+//
+// let size = "5"
+//
+// console.log(size.padStart(2, "0"))
+//
+// let phoneNumber = "09352509942"
+// let last4Digits = phoneNumber.slice(-4)
+// let finalPhoneNumber = last4Digits.padStart(phoneNumber.length, "*")
+//
+// console.log(finalPhoneNumber)
 
-console.log(username.padStart(10, "-"))
 
-let size = "5"
+let productPrice = 7_000_000
+let postCost = 5_000
 
-console.log(size.padStart(2, "0"))
-
-let phoneNumber = "09352509942"
-let last4Digits = phoneNumber.slice(-4)
-let finalPhoneNumber = last4Digits.padStart(phoneNumber.length, "*")
-
-console.log(finalPhoneNumber)
+console.log("total price: ", productPrice + postCost)
 
 
 
