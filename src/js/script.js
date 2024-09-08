@@ -554,38 +554,49 @@
 // console.log(names)
 
 
-let numbers = [1, 3, 2, 5, 4]
-let userName = "sabzlearn.ir"
-let user = {
-    name: "amir",
-    age: 23,
-}
+// let numbers = [1, 3, 2, 5, 4]
+// let userName = "sabzlearn.ir"
+// let user = {
+//     name: "amir",
+//     age: 23,
+// }
 
 // for (let property of user) {
 //     console.log(property)
 // }
 
-function sum() {
-    console.log(arguments)
+// function sum() {
+//     console.log(arguments)
+//
+//     let allArgSum = 0
+//
+//     for (let arg of arguments) {
+//         allArgSum += arg
+//     }
+//     return allArgSum
+// }
+//
+// console.log("Sum: ", sum(1, 2, 3, 4))
+//
+// let liElems = document.getElementsByTagName("li")
+//
+// for (let li of liElems) {
+//     console.log(li)
+//     li.addEventListener("click", e => e.target.remove())
+// }
+//
+// console.log(liElems)
 
-    let allArgSum = 0
 
-    for (let arg of arguments) {
-        allArgSum += arg
-    }
-    return allArgSum
+let user = {
+    id: 1,
+    name: "amir",
+    age: 23
 }
 
-console.log("Sum: ", sum(1, 2, 3, 4))
-
-let liElems = document.getElementsByTagName("li")
-
-for (let li of liElems) {
-    console.log(li)
-    li.addEventListener("click", e => e.target.remove())
+for (let item in user) {
+    console.log(`user.${item}: ${user[item]}`)
 }
-
-console.log(liElems)
 
 
 
