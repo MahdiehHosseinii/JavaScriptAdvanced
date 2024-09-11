@@ -631,15 +631,27 @@
 // userAge < 18 && console.log("you are not regestered")
 
 
-let userAge = 18
+// let userAge = 18
+//
+// userAge !== 18 || alert("fake")
+//
+// let userType = "admin"
+// let userToken = userType || "user"
+//
+// console.log(userToken)
 
-userAge !== 18 || alert("fake")
 
-let userType = "admin"
-let userToken = userType || "user"
+import {isLogin, userRegister, usersCount as usersLength} from './func.js'
 
-console.log(userToken)
 
+let newUserName = prompt('Enter User Name: ')
+let newUserAge = prompt('Enter User Age: ')
+
+console.log('Users Count:', usersLength);
+
+// console.log(userRegister(newUserName, newUserAge));
+
+console.log(isLogin(41));
 
 
 
