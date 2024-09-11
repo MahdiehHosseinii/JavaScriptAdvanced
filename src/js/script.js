@@ -614,10 +614,21 @@
 // console.log(finalPhoneNumber)
 
 
-let productPrice = 7_000_000
-let postCost = 5_000
+// let productPrice = 7_000_000
+// let postCost = 5_000
+//
+// console.log("total price: ", productPrice + postCost)
 
-console.log("total price: ", productPrice + postCost)
+
+let userAge = 14
+
+// if (userAge > 18) {
+//     alert("you logged in successfully :)")
+// }
+
+userAge > 18 && alert("you logged in successfully :)")
+
+userAge < 18 && console.log("you are not regestered")
 
 
 
