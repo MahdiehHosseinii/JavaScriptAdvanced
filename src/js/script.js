@@ -620,15 +620,28 @@
 // console.log("total price: ", productPrice + postCost)
 
 
-let userAge = 14
-
+// let userAge = 14
+//
 // if (userAge > 18) {
 //     alert("you logged in successfully :)")
 // }
+//
+// userAge > 18 && alert("you logged in successfully :)")
+//
+// userAge < 18 && console.log("you are not regestered")
 
-userAge > 18 && alert("you logged in successfully :)")
 
-userAge < 18 && console.log("you are not regestered")
+let userAge = 18
+
+userAge !== 18 || alert("fake")
+
+let userType = "admin"
+let userToken = userType || "user"
+
+console.log(userToken)
+
+
+
 
 
 
