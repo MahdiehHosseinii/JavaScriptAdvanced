@@ -654,9 +654,15 @@
 // console.log(isLogin(41));
 
 
-import mohammad from "./func.js"
+// import mohammad from "./func.js"
+//
+// console.log("users count: ", mohammad)
 
-console.log("users count: ", mohammad)
+
+let userAge = Number(prompt("Enter Your Age: ", 18))
+
+console.log("User Age: ", userAge)
+console.log("User Age Type: ", typeof userAge)
 
 
 
