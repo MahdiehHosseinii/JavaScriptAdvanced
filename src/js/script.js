@@ -659,10 +659,27 @@
 // console.log("users count: ", mohammad)
 
 
-let userAge = Number(prompt("Enter Your Age: ", 18))
+// let userAge = Number(prompt("Enter Your Age: ", 18))
+//
+// console.log("User Age: ", userAge)
+// console.log("User Age Type: ", typeof userAge)
 
-console.log("User Age: ", userAge)
-console.log("User Age Type: ", typeof userAge)
+
+window.addEventListener("load", () => {
+    let DBOpenReq = indexedDB.open("sabzleran", 2)
+
+    DBOpenReq.addEventListener("error", (err) => {
+        console.warn("Error", err)
+    })
+
+    DBOpenReq.addEventListener("success", (event) => {
+        console.log("Success", event)
+    })
+
+    DBOpenReq.addEventListener("upgradeneeded", (event) => {
+        console.log("upgrade", event)
+    })
+})
 
 
 
