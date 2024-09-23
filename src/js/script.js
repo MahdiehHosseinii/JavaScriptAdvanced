@@ -665,19 +665,41 @@
 // console.log("User Age Type: ", typeof userAge)
 
 
+let db = null
+let objStore = null
+
 window.addEventListener("load", () => {
-    let DBOpenReq = indexedDB.open("sabzleran", 2)
+
+    let DBOpenReq = indexedDB.open("sabzleran", 9)
 
     DBOpenReq.addEventListener("error", (err) => {
+
         console.warn("Error", err)
     })
 
     DBOpenReq.addEventListener("success", (event) => {
+
         console.log("Success", event)
     })
 
     DBOpenReq.addEventListener("upgradeneeded", (event) => {
-        console.log("upgrade", event)
+
+        db = event.target.result
+
+        console.log("old V: ", event.oldVersion)
+        console.log("new V: ", event.newVersion)
+
+        if (!db.objectStoreNames.contains("users")) {
+            objStore = db.createObjectStore("users")
+        }
+
+        if (db.objectStoreNames.contains("courses")) {
+            db.deleteObjectStore("courses")
+        }
+
+        // db.createObjectStore("courses")
+
+        console.log("upgrade", db.objectStoreNames)
     })
 })
 
