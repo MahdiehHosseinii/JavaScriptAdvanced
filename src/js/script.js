@@ -666,90 +666,141 @@
 
 
 let $ = document
-const registerForm = $.querySelector(".register-form")
-const name = $.querySelector(".name-input")
-const password = $.querySelector(".pass-input")
-const email = $.querySelector(".email-input")
+const registerForm = $.querySelector('.register-form')
+const nameInput = $.querySelector('.name-input')
+const passwordInput = $.querySelector('.password-input')
+const emailInput = $.querySelector('.email-input')
+const usersTableElem = $.querySelector('table')
+
 let db = null
-let objStore = null
+let objectStore = null
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
 
-    let DBOpenReq = indexedDB.open("sabzleran", 11)
+    let DBOpenReq = indexedDB.open('SabzLearn', 18)
 
-    DBOpenReq.addEventListener("error", (err) => {
-
-        console.warn("Error", err)
+    DBOpenReq.addEventListener('error', (err) => {
+        console.warn('Error', err);
     })
 
-    DBOpenReq.addEventListener("success", (event) => {
+    DBOpenReq.addEventListener('success', (event) => {
+        db = event.target.result
+        getUsers()
+        console.log('Success', event.target.result);
+    })
+
+    DBOpenReq.addEventListener('upgradeneeded', (event) => {
 
         db = event.target.result
 
-        console.log("Success", event)
-    })
+        console.log('Old V:', event.oldVersion);
+        console.log('New V:', event.newVersion);
 
-    DBOpenReq.addEventListener("upgradeneeded", (event) => {
-
-        db = event.target.result
-
-        console.log("old V: ", event.oldVersion)
-        console.log("new V: ", event.newVersion)
-
-        if (!db.objectStoreNames.contains("users")) {
-            objStore = db.createObjectStore("users", {
-                keyPath: "userId"
+        if (!db.objectStoreNames.contains('users')) {
+            objectStore = db.createObjectStore('users', {
+                keyPath: 'userID'
             })
         }
 
-        if (db.objectStoreNames.contains("courses")) {
-            db.deleteObjectStore("courses")
+        if (db.objectStoreNames.contains('courses')) {
+            db.deleteObjectStore('courses')
         }
 
-        // db.createObjectStore("courses")
+        // db.createObjectStore('courses')
 
-        console.log("upgrade", db.objectStoreNames)
+        console.log('upgrade', db.objectStoreNames);
+
     })
 })
 
-registerForm.addEventListener("submit", event => {
+registerForm.addEventListener('submit', event => {
     event.preventDefault()
 
     let newUser = {
-        userId: Math.floor(Math.random() * 9999),
-        name: name.value,
-        password: password.value,
-        email: email.value
+        userID: Math.floor(Math.random() * 9999),
+        name: nameInput.value,
+        password: passwordInput.value,
+        email: emailInput.value,
     }
 
-    let ta = db.transaction("users", "readwrite")
+    let tx = createTX('users', 'readwrite')
 
-    ta.addEventListener("error", err => {
-        console.warn("ta Error: ", err)
+    tx.addEventListener('complete', (event) => {
+        console.log('Tx', event)
     })
 
-    ta.addEventListener("success", event => {
-        console.log("ta Success: ", event)
-    })
-
-    let store = ta.objectStore("users")
+    let store = tx.objectStore('users')
     let request = store.add(newUser)
 
-    clearInput()
-
-    request.addEventListener("error", err => {
-        console.warn("Request Error: ", err)
+    request.addEventListener('error', (err) => {
+        console.warn('Request Error:', err)
     })
 
-    request.addEventListener("success", event => {
-        console.log("Request Success: ", event)
+    request.addEventListener('success', (event) => {
+
+        console.log('Request', event)
+        clearInputs()
+        getUsers()
     })
+
+
 })
 
-function clearInput() {
-    name.value = ""
-    password.value = ""
-    email.value = ""
+function clearInputs() {
+    nameInput.value = ''
+    passwordInput.value = ''
+    emailInput.value = ''
+}
+
+function getUsers() {
+
+    let tx = createTX('users', 'readonly')
+
+    tx.addEventListener('complete', (event) => {
+        console.log('Tx', event)
+    })
+
+    let store = tx.objectStore('users')
+    let request = store.getAll()
+
+    request.addEventListener('error', (err) => {
+        console.warn('Get Request Error:', err)
+    })
+
+    request.addEventListener('success', (event) => {
+
+        let allUsers = event.target.result
+
+        usersTableElem.innerHTML = `<tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Password</th>
+                                        <th>Email</th>
+                                    </tr>`
+
+        usersTableElem.innerHTML += allUsers.map(user => {
+            return `<tr>
+                        <td>${user.userID}</td>
+                        <td>${user.name}</td>
+                        <td>${user.password}</td>
+                        <td>${user.email}</td>
+                    </tr>`
+        }).join('')
+
+        // console.log(usersTemplateArray);
+
+    })
+
+}
+
+function createTX(storeName, mode) {
+    let tx = db.transaction(storeName, mode)
+
+    tx.addEventListener('error', (err) => {
+        console.warn('Tx Error:', err)
+    })
+
+    return tx
 }
 
 
