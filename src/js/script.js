@@ -665,12 +665,17 @@
 // console.log("User Age Type: ", typeof userAge)
 
 
+let $ = document
+const registerForm = $.querySelector(".register-form")
+const name = $.querySelector(".name-input")
+const password = $.querySelector(".pass-input")
+const email = $.querySelector(".email-input")
 let db = null
 let objStore = null
 
 window.addEventListener("load", () => {
 
-    let DBOpenReq = indexedDB.open("sabzleran", 9)
+    let DBOpenReq = indexedDB.open("sabzleran", 11)
 
     DBOpenReq.addEventListener("error", (err) => {
 
@@ -678,6 +683,8 @@ window.addEventListener("load", () => {
     })
 
     DBOpenReq.addEventListener("success", (event) => {
+
+        db = event.target.result
 
         console.log("Success", event)
     })
@@ -690,7 +697,9 @@ window.addEventListener("load", () => {
         console.log("new V: ", event.newVersion)
 
         if (!db.objectStoreNames.contains("users")) {
-            objStore = db.createObjectStore("users")
+            objStore = db.createObjectStore("users", {
+                keyPath: "userId"
+            })
         }
 
         if (db.objectStoreNames.contains("courses")) {
@@ -702,6 +711,46 @@ window.addEventListener("load", () => {
         console.log("upgrade", db.objectStoreNames)
     })
 })
+
+registerForm.addEventListener("submit", event => {
+    event.preventDefault()
+
+    let newUser = {
+        userId: Math.floor(Math.random() * 9999),
+        name: name.value,
+        password: password.value,
+        email: email.value
+    }
+
+    let ta = db.transaction("users", "readwrite")
+
+    ta.addEventListener("error", err => {
+        console.warn("ta Error: ", err)
+    })
+
+    ta.addEventListener("success", event => {
+        console.log("ta Success: ", event)
+    })
+
+    let store = ta.objectStore("users")
+    let request = store.add(newUser)
+
+    clearInput()
+
+    request.addEventListener("error", err => {
+        console.warn("Request Error: ", err)
+    })
+
+    request.addEventListener("success", event => {
+        console.log("Request Success: ", event)
+    })
+})
+
+function clearInput() {
+    name.value = ""
+    password.value = ""
+    email.value = ""
+}
 
 
 
