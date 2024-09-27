@@ -776,6 +776,7 @@ function getUsers() {
                                         <th>Name</th>
                                         <th>Password</th>
                                         <th>Email</th>
+                                        <th>actions</th>
                                     </tr>`
 
         usersTableElem.innerHTML += allUsers.map(user => {
@@ -784,6 +785,7 @@ function getUsers() {
                         <td>${user.name}</td>
                         <td>${user.password}</td>
                         <td>${user.email}</td>
+                        <td><a href="#" onclick="removeUser(${user.userID})">remove</a></td>
                     </tr>`
         }).join('')
 
@@ -791,6 +793,31 @@ function getUsers() {
 
     })
 
+}
+
+function removeUser(userID) {
+
+    event.preventDefault()
+
+    let tx = createTX("users", "readwrite")
+
+    tx.addEventListener('complete', (event) => {
+        console.log('delete Tx', event)
+    })
+
+    let store = tx.objectStore('users')
+    let request = store.delete(userID)
+
+    request.addEventListener('error', (err) => {
+        console.warn('delete Request Error:', err)
+    })
+
+    request.addEventListener('success', (event) => {
+
+        console.log('delet Request success', event)
+
+        getUsers()
+    })
 }
 
 function createTX(storeName, mode) {
@@ -802,6 +829,8 @@ function createTX(storeName, mode) {
 
     return tx
 }
+
+
 
 
 
