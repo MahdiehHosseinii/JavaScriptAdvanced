@@ -831,11 +831,17 @@
 // }
 
 
-// let regexCode = /a.m/
-let regexCode = /a.+n/
-let text = "i am mohammad amin , web developer"
+//  let regexCode = /a.m/
+// let regexCode = /a.+n/
+// let text = "i am mohammad amin , web developer"
+//
+// console.log(regexCode.test(text))
 
-console.log(regexCode.test(text))
+
+let emailRegEx = /.+@.+.com/
+let userEmail = prompt("please Enter your email: ")
+
+console.log(emailRegEx.test(userEmail))
 
 
 
