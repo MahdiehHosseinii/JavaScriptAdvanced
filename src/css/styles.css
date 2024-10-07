@@ -405,6 +405,8 @@ tr:nth-child(even) {
 }*/
 
 
-
+li {
+    cursor: pointer;
+}
 
 

@@ -838,10 +838,60 @@
 // console.log(regexCode.test(text))
 
 
-let emailRegEx = /.+@.+.com/
-let userEmail = prompt("please Enter your email: ")
+// let emailRegEx = /.+@.+.com/
+// let userEmail = prompt("please Enter your email: ")
+//
+// console.log(emailRegEx.test(userEmail))
 
-console.log(emailRegEx.test(userEmail))
+
+function removeListItem(el) {
+
+    el.remove()
+
+    console.log(el)
+}
+
+function sumNumbers() {
+
+    let sum = 0
+
+    for (let arg of arguments) {
+        sum += arg
+    }
+
+    console.log("this is in function", this)
+
+    return sum
+}
+
+console.log(sumNumbers(2, 5, 3))
+
+let user = {
+    id: 1,
+    name: "amir",
+    age: 23,
+
+    walk: function () {
+        console.log("user walked")
+    },
+
+    showThis: function () {
+        console.log(this)
+    },
+
+    setName: function (newName) {
+        this.name = newName
+    },
+
+    setAge: function (newAge) {
+        this.age = newAge
+    }
+}
+
+user.setAge(25)
+
+console.log(user)
+
 
 
 
