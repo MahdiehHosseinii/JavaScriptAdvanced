@@ -844,54 +844,78 @@
 // console.log(emailRegEx.test(userEmail))
 
 
-function removeListItem(el) {
+// function removeListItem(el) {
+//
+//     el.remove()
+//
+//     console.log(el)
+// }
+//
+// function sumNumbers() {
+//
+//     let sum = 0
+//
+//     for (let arg of arguments) {
+//         sum += arg
+//     }
+//
+//     console.log("this is in function", this)
+//
+//     return sum
+// }
+//
+// console.log(sumNumbers(2, 5, 3))
+//
+// let user = {
+//     id: 1,
+//     name: "amir",
+//     age: 23,
+//
+//     walk: function () {
+//         console.log("user walked")
+//     },
+//
+//     showThis: function () {
+//         console.log(this)
+//     },
+//
+//     setName: function (newName) {
+//         this.name = newName
+//     },
+//
+//     setAge: function (newAge) {
+//         this.age = newAge
+//     }
+// }
+//
+// user.setAge(25)
+//
+// console.log(user)
 
-    el.remove()
-
-    console.log(el)
-}
-
-function sumNumbers() {
-
-    let sum = 0
-
-    for (let arg of arguments) {
-        sum += arg
-    }
-
-    console.log("this is in function", this)
-
-    return sum
-}
-
-console.log(sumNumbers(2, 5, 3))
 
 let user = {
     id: 1,
     name: "amir",
-    age: 23,
-
-    walk: function () {
-        console.log("user walked")
-    },
-
-    showThis: function () {
-        console.log(this)
-    },
-
-    setName: function (newName) {
-        this.name = newName
-    },
-
-    setAge: function (newAge) {
-        this.age = newAge
-    }
+    age: 23
 }
 
-user.setAge(25)
+let user2 = {
+    id: 2,
+    name: "amin",
+    age: 19
+}
 
-console.log(user)
+function showUser(score, city) {
+    console.log(this.name + " is " + this.age + " years old => score: ", score, "city: " + city)
+}
 
+showUser.call(user, 20, "tehran")
+showUser.call(user2, 15, "shomal")
+
+showUser.apply(user, [20, "tehran"])
+showUser.apply(user2, [15, "shomal"])
+
+showUser()
 
 
 
