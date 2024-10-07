@@ -893,29 +893,61 @@
 // console.log(user)
 
 
+// let user = {
+//     id: 1,
+//     name: "amir",
+//     age: 23
+// }
+//
+// let user2 = {
+//     id: 2,
+//     name: "amin",
+//     age: 19
+// }
+//
+// function showUser(score, city) {
+//     console.log(this.name + " is " + this.age + " years old => score: ", score, "city: " + city)
+// }
+//
+// showUser.call(user, 20, "tehran")
+// showUser.call(user2, 15, "shomal")
+//
+// showUser.apply(user, [20, "tehran"])
+// showUser.apply(user2, [15, "shomal"])
+//
+// showUser()
+
+
 let user = {
     id: 1,
     name: "amir",
-    age: 23
+    age: 23,
+
+    walk: function () {
+        console.log(this.name + " is walking")
+    },
+    // aboutUser: function () {
+    //     setTimeout(function () {
+    //         console.log(this.name, " is ", this.age + " years old")
+    //     }.bind(user), 3000)
+    //
+    // }
+
+    aboutUser: function () {
+        setTimeout(() => {
+            console.log(this.name, " is ", this.age + " years old")
+        }, 3000)
+
+    }
 }
 
 let user2 = {
     id: 2,
     name: "amin",
-    age: 19
+    age: 18,
 }
 
-function showUser(score, city) {
-    console.log(this.name + " is " + this.age + " years old => score: ", score, "city: " + city)
-}
-
-showUser.call(user, 20, "tehran")
-showUser.call(user2, 15, "shomal")
-
-showUser.apply(user, [20, "tehran"])
-showUser.apply(user2, [15, "shomal"])
-
-showUser()
+user.aboutUser()
 
 
 
