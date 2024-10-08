@@ -950,30 +950,67 @@
 // user.aboutUser()
 
 
-function Animal() {
-    this.name = "dog"
-    this.color = "brown"
-    this.canFly = false
-    this.footsCount = 4
+// function Animal() {
+//     this.name = "dog"
+//     this.color = "brown"
+//     this.canFly = false
+//     this.footsCount = 4
+// }
+//
+// let dogAnimal = new Animal()
+//
+// console.log(dogAnimal)
+//
+// function person(personId, personUserName, personAge, personJob, personType) {
+//     this.id = personId
+//     this.username = personUserName
+//     this.age = personAge
+//     this.job = personJob
+//     this.type = personType
+//
+// }
+//
+// let userAli = new person(1, "ali", 25, "JS developer", "user")
+// let userAmir = new person(2, "amir", 23, "manager", "admin")
+//
+// console.log(userAmir)
+
+
+function User(username, userAge, userJob) {
+    this.name = username
+    this.age = userAge
+    this.job = userJob
+
+    this.getName = function () {
+        return this.name
+    }
+
+    this.getAge = function () {
+        return this.age
+    }
+
+    this.getJob = function () {
+        return this.job
+    }
+
+    this.setName = function (newName) {
+        this.name = newName
+    }
+
+    this.setAge = function (newAge) {
+        this.age = newAge
+    }
+
+    this.setJob = function (newJob) {
+        this.job = newJob
+    }
 }
 
-let dogAnimal = new Animal()
+let userAli = new User("ali", 24, "JS developer")
 
-console.log(dogAnimal)
+userAli.setAge(34)
 
-function person(personId, personUserName, personAge, personJob, personType) {
-    this.id = personId
-    this.username = personUserName
-    this.age = personAge
-    this.job = personJob
-    this.type = personType
-
-}
-
-let userAli = new person(1, "ali", 25, "JS developer", "user")
-let userAmir = new person(2, "amir", 23, "manager", "admin")
-
-console.log(userAmir)
+console.log(userAli.getAge())
 
 
 
