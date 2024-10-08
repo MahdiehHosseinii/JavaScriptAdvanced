@@ -918,36 +918,62 @@
 // showUser()
 
 
-let user = {
-    id: 1,
-    name: "amir",
-    age: 23,
+// let user = {
+//     id: 1,
+//     name: "amir",
+//     age: 23,
+//
+//     walk: function () {
+//         console.log(this.name + " is walking")
+//     },
+//     aboutUser: function () {
+//         setTimeout(function () {
+//             console.log(this.name, " is ", this.age + " years old")
+//         }.bind(user), 3000)
+//
+//     }
+//
+//     aboutUser: function () {
+//         setTimeout(() => {
+//             console.log(this.name, " is ", this.age + " years old")
+//         }, 3000)
+//
+//     }
+// }
+//
+// let user2 = {
+//     id: 2,
+//     name: "amin",
+//     age: 18,
+// }
+//
+// user.aboutUser()
 
-    walk: function () {
-        console.log(this.name + " is walking")
-    },
-    // aboutUser: function () {
-    //     setTimeout(function () {
-    //         console.log(this.name, " is ", this.age + " years old")
-    //     }.bind(user), 3000)
-    //
-    // }
 
-    aboutUser: function () {
-        setTimeout(() => {
-            console.log(this.name, " is ", this.age + " years old")
-        }, 3000)
-
-    }
+function Animal() {
+    this.name = "dog"
+    this.color = "brown"
+    this.canFly = false
+    this.footsCount = 4
 }
 
-let user2 = {
-    id: 2,
-    name: "amin",
-    age: 18,
+let dogAnimal = new Animal()
+
+console.log(dogAnimal)
+
+function person(personId, personUserName, personAge, personJob, personType) {
+    this.id = personId
+    this.username = personUserName
+    this.age = personAge
+    this.job = personJob
+    this.type = personType
+
 }
 
-user.aboutUser()
+let userAli = new person(1, "ali", 25, "JS developer", "user")
+let userAmir = new person(2, "amir", 23, "manager", "admin")
+
+console.log(userAmir)
 
 
 
