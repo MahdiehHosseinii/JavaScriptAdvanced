@@ -976,41 +976,48 @@
 // console.log(userAmir)
 
 
-function User(username, userAge, userJob) {
-    this.name = username
-    this.age = userAge
-    this.job = userJob
+// function User(username, userAge, userJob) {
+//     this.name = username
+//     this.age = userAge
+//     this.job = userJob
+//
+//     this.getName = function () {
+//         return this.name
+//     }
+//
+//     this.getAge = function () {
+//         return this.age
+//     }
+//
+//     this.getJob = function () {
+//         return this.job
+//     }
+//
+//     this.setName = function (newName) {
+//         this.name = newName
+//     }
+//
+//     this.setAge = function (newAge) {
+//         this.age = newAge
+//     }
+//
+//     this.setJob = function (newJob) {
+//         this.job = newJob
+//     }
+// }
+//
+// let userAli = new User("ali", 24, "JS developer")
+//
+// userAli.setAge(34)
+//
+// console.log(userAli.getAge())
 
-    this.getName = function () {
-        return this.name
-    }
 
-    this.getAge = function () {
-        return this.age
-    }
+let userName = "Mohammad Amin"
+let adminName = "Mohammad Amin"
+let adminName = new String("Mohammad Amin")
 
-    this.getJob = function () {
-        return this.job
-    }
-
-    this.setName = function (newName) {
-        this.name = newName
-    }
-
-    this.setAge = function (newAge) {
-        this.age = newAge
-    }
-
-    this.setJob = function (newJob) {
-        this.job = newJob
-    }
-}
-
-let userAli = new User("ali", 24, "JS developer")
-
-userAli.setAge(34)
-
-console.log(userAli.getAge())
+console.log(adminName)
 
 
 
