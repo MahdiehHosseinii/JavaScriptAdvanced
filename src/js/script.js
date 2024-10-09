@@ -1020,16 +1020,31 @@
 // console.log(adminName)
 
 
-let port = 0
-let developingPort = port || 5000
+// let port = 0
+// let developingPort = port || 5000
+//
+// console.log(developingPort)
+//
+// let port = undefined
+// let testPort = 0
+// let developingPort = (testPort || port) ?? 5000
+//
+// console.log(developingPort)
 
-console.log(developingPort)
 
-let port = undefined
-let testPort = 0
-let developingPort = (testPort || port) ?? 5000
+let user = {
+    id: 1,
+    username: "amir",
+    age: 23,
+    address: {
+        country: "iran"
+    }
+}
 
-console.log(developingPort)
+let userStreet = user.address.city ? user.address.city.street : undefined
+
+let userStreet = user?.address
+console.log(userStreet)
 
 
 
