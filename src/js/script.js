@@ -1013,11 +1013,23 @@
 // console.log(userAli.getAge())
 
 
-let userName = "Mohammad Amin"
-let adminName = "Mohammad Amin"
-let adminName = new String("Mohammad Amin")
+// let userName = "Mohammad Amin"
+// let adminName = "Mohammad Amin"
+// let adminName = new String("Mohammad Amin")
+//
+// console.log(adminName)
 
-console.log(adminName)
+
+let port = 0
+let developingPort = port || 5000
+
+console.log(developingPort)
+
+let port = undefined
+let testPort = 0
+let developingPort = (testPort || port) ?? 5000
+
+console.log(developingPort)
 
 
 
