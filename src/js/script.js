@@ -1032,19 +1032,36 @@
 // console.log(developingPort)
 
 
-let user = {
+// let user = {
+//     id: 1,
+//     username: "amir",
+//     age: 23,
+//     address: {
+//         country: "iran"
+//     }
+// }
+//
+// let userStreet = user.address.city ? user.address.city.street : undefined
+//
+// let userStreet = user?.address
+// console.log(userStreet)
+
+
+let person = {
     id: 1,
-    username: "amir",
+    firstName: "amir",
+    lastName: "kazemi",
     age: 23,
-    address: {
-        country: "iran"
-    }
+    job: "manager"
 }
 
-let userStreet = user.address.city ? user.address.city.street : undefined
+let entriesPerson = Object.entries(person)
 
-let userStreet = user?.address
-console.log(userStreet)
+for (let userProp of entriesPerson) {
+    console.log(`${userProp[0]} : ${userProp[1]} `)
+}
+
+console.log(entriesPerson)
 
 
 
