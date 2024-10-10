@@ -1047,22 +1047,89 @@
 // console.log(userStreet)
 
 
-let person = {
+// let person = {
+//     id: 1,
+//     firstName: "amir",
+//     lastName: "kazemi",
+//     age: 23,
+//     job: "manager"
+// }
+//
+// let entriesPerson = Object.entries(person)
+//
+// for (let userProp of entriesPerson) {
+//     console.log(`${userProp[0]} : ${userProp[1]} `)
+// }
+//
+// console.log(entriesPerson)
+
+
+let scores = [
+    12,
+    22,
+    17,
+    89,
+    90,
+    45,
+    17,
+    12,
+    22
+]
+
+let user = {
     id: 1,
-    firstName: "amir",
-    lastName: "kazemi",
-    age: 23,
-    job: "manager"
+    name: "amir",
+    age: 23
 }
 
-let entriesPerson = Object.entries(person)
+console.log(scores)
 
-for (let userProp of entriesPerson) {
-    console.log(`${userProp[0]} : ${userProp[1]} `)
+let numbers = new Set()
+
+numbers.add(20)
+numbers.add(20)
+numbers.add(12)
+numbers.add(10)
+numbers.add(90)
+numbers.add(100)
+
+let arrayNumbers = [...numbers]
+
+console.log(arrayNumbers)
+
+for (let number of numbers) {
+    console.log(number)
 }
 
-console.log(entriesPerson)
+console.log("before delete", numbers, "&& size: ", numbers.size)
 
+console.log(numbers.has(13))
+
+numbers.delete(20)
+
+console.log("after delete", numbers, "&& size: ", numbers.size)
+
+numbers.clear()
+
+console.log("clear all", numbers, "&& size: ", numbers.size)
+
+numbers.forEach(number => console.log(number))
+
+let scores = [
+    12,
+    22,
+    17,
+    89,
+    90,
+    45,
+    17,
+    12,
+    22
+]
+
+let setScores = new Set(scores)
+
+console.log(setScores)
 
 
 
