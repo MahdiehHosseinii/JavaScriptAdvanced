@@ -1132,29 +1132,76 @@
 // console.log(setScores)
 
 
-let userName = "amir"
+// let userName = "amir"
+//
+// console.log(userName[3])
+//
+// for (let char of userName) {
+//     console.log(char)
+// }
+//
+// let setUserName = new Set(userName)
+//
+// console.log(setUserName)
+//
+// let items = [
+//     {id: 1},
+//     {id: 2},
+//     {id: 3}
+// ]
+//
+// let setItemsData = new Set(items)
+//
+// setItemsData.add(22)
+//
+// console.log(setItemsData.has(22))
 
-console.log(userName[3])
 
-for (let char of userName) {
-    console.log(char)
+let user = {
+    id: 1,
+    firstName: "amir",
+    lastName: "kazemi",
+    age: 23
 }
 
-let setUserName = new Set(userName)
+let userMap = new Map()
 
-console.log(setUserName)
+userMap.set("id", 1)
+userMap.set("firstName", "amir")
+userMap.set("lastName", "kazemi")
+userMap.set("age", "23")
 
-let items = [
-    {id: 1},
-    {id: 2},
-    {id: 3}
-]
+console.log(userMap.size)
+console.log(userMap.has("email"))
+userMap.delete("lastName")
+console.log(userMap.get("firstName"))
+userMap.clear()
 
-let setItemsData = new Set(items)
+userMap.forEach((value, key) => console.log(`${key}: ${value}`))
 
-setItemsData.add(22)
+let user = {
+    id: 1,
+    firstName: "amir",
+    lastName: "kazemi",
+    age: 23
+}
 
-console.log(setItemsData.has(22))
+let userMap = new Map(Object.entries(user))
+
+console.log(userMap)
+
+let userMap = new Map()
+
+userMap.set("id", 1)
+userMap.set("firstName", "amir")
+userMap.set("lastName", "kazemi")
+userMap.set("age", "23")
+
+let userObj = Object.fromEntries(userMap)
+
+console.log(userObj)
+
+console.log(userMap)
 
 
 
