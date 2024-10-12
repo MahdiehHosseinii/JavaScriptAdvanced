@@ -1157,51 +1157,85 @@
 // console.log(setItemsData.has(22))
 
 
-let user = {
-    id: 1,
-    firstName: "amir",
-    lastName: "kazemi",
-    age: 23
+// let user = {
+//     id: 1,
+//     firstName: "amir",
+//     lastName: "kazemi",
+//     age: 23
+// }
+//
+// let userMap = new Map()
+//
+// userMap.set("id", 1)
+// userMap.set("firstName", "amir")
+// userMap.set("lastName", "kazemi")
+// userMap.set("age", "23")
+//
+// console.log(userMap.size)
+// console.log(userMap.has("email"))
+// userMap.delete("lastName")
+// console.log(userMap.get("firstName"))
+// userMap.clear()
+//
+// userMap.forEach((value, key) => console.log(`${key}: ${value}`))
+//
+// let user = {
+//     id: 1,
+//     firstName: "amir",
+//     lastName: "kazemi",
+//     age: 23
+// }
+//
+// let userMap = new Map(Object.entries(user))
+//
+// console.log(userMap)
+//
+// let userMap = new Map()
+//
+// userMap.set("id", 1)
+// userMap.set("firstName", "amir")
+// userMap.set("lastName", "kazemi")
+// userMap.set("age", "23")
+//
+// let userObj = Object.fromEntries(userMap)
+//
+// console.log(userObj)
+//
+// console.log(userMap)
+
+
+let mySet = new Set()
+
+mySet.add("ali")
+
+console.log("Set: ", mySet, "&& size: ", mySet.size)
+
+let myWeakSet = new WeakSet()
+
+let fakeData = {data: "fake data"}
+
+myWeakSet.add(fakeData)
+
+console.log("Weak Set: ", myWeakSet)
+
+function FakeData() {
+    this.data = {
+        data: "fake data"
+    }
 }
 
-let userMap = new Map()
+window.fakeData = new FakeData()
 
-userMap.set("id", 1)
-userMap.set("firstName", "amir")
-userMap.set("lastName", "kazemi")
-userMap.set("age", "23")
 
-console.log(userMap.size)
-console.log(userMap.has("email"))
-userMap.delete("lastName")
-console.log(userMap.get("firstName"))
-userMap.clear()
+let mySet = new Set()
 
-userMap.forEach((value, key) => console.log(`${key}: ${value}`))
+mySet.add(window.fakeData)
 
-let user = {
-    id: 1,
-    firstName: "amir",
-    lastName: "kazemi",
-    age: 23
-}
+delete window.fakeData
 
-let userMap = new Map(Object.entries(user))
+console.log(window.fakeData)
 
-console.log(userMap)
-
-let userMap = new Map()
-
-userMap.set("id", 1)
-userMap.set("firstName", "amir")
-userMap.set("lastName", "kazemi")
-userMap.set("age", "23")
-
-let userObj = Object.fromEntries(userMap)
-
-console.log(userObj)
-
-console.log(userMap)
+console.log(mySet)
 
 
 
