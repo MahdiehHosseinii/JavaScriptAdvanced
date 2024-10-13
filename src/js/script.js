@@ -1204,38 +1204,57 @@
 // console.log(userMap)
 
 
-let mySet = new Set()
+// let mySet = new Set()
+//
+// mySet.add("ali")
+//
+// console.log("Set: ", mySet, "&& size: ", mySet.size)
+//
+// let myWeakSet = new WeakSet()
+//
+// let fakeData = {data: "fake data"}
+//
+// myWeakSet.add(fakeData)
+//
+// console.log("Weak Set: ", myWeakSet)
+//
+// function FakeData() {
+//     this.data = {
+//         data: "fake data"
+//     }
+// }
+//
+// window.fakeData = new FakeData()
+//
+//
+// let mySet = new Set()
+//
+// mySet.add(window.fakeData)
+//
+// delete window.fakeData
+//
+// console.log(window.fakeData)
+//
+// console.log(mySet)
 
-mySet.add("ali")
 
-console.log("Set: ", mySet, "&& size: ", mySet.size)
-
-let myWeakSet = new WeakSet()
-
-let fakeData = {data: "fake data"}
-
-myWeakSet.add(fakeData)
-
-console.log("Weak Set: ", myWeakSet)
-
-function FakeData() {
-    this.data = {
-        data: "fake data"
-    }
+let user = {
+    id: 1,
+    firstName: "amir",
+    lastName: "kazemi",
+    age: 23
 }
 
-window.fakeData = new FakeData()
+user.job = "web developer"
 
+console.log(user.firstName)
 
-let mySet = new Set()
+console.log(user)
 
-mySet.add(window.fakeData)
+let userProxy = new Proxy(user, {})
 
-delete window.fakeData
-
-console.log(window.fakeData)
-
-console.log(mySet)
+console.log("user without proxy: ", user.firstName)
+console.log("user with proxy: ", userProxy.firstName)
 
 
 
