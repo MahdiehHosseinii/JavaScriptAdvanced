@@ -1238,6 +1238,25 @@
 // console.log(mySet)
 
 
+// let user = {
+//     id: 1,
+//     firstName: "amir",
+//     lastName: "kazemi",
+//     age: 23
+// }
+//
+// user.job = "web developer"
+//
+// console.log(user.firstName)
+//
+// console.log(user)
+//
+// let userProxy = new Proxy(user, {})
+//
+// console.log("user without proxy: ", user.firstName)
+// console.log("user with proxy: ", userProxy.firstName)
+
+
 let user = {
     id: 1,
     firstName: "amir",
@@ -1245,17 +1264,17 @@ let user = {
     age: 23
 }
 
-user.job = "web developer"
+user = new Proxy(user, {
+    get: function (target, property) {
+        console.log(target)
+        console.log(property)
+        // return target[property] ? target[property] : null
+        return property in target ? target[property] : null
+    }
+})
 
-console.log(user.firstName)
-
-console.log(user)
-
-let userProxy = new Proxy(user, {})
-
-console.log("user without proxy: ", user.firstName)
-console.log("user with proxy: ", userProxy.firstName)
-
+console.log("user object: ", user.firstName)
+console.log("user proxy: ", user.firstName)
 
 
 
