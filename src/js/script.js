@@ -1277,41 +1277,70 @@
 // console.log("user proxy: ", user.firstName)
 
 
-let user = {
+// let user = {
+//     id: 1,
+//     firstName: "amir",
+//     lastName: "kazemi",
+//     type: "user"
+// }
+//
+// user = new Proxy(user, {
+//     get: function (target, property) {
+//         console.log(target)
+//         console.log(property)
+//         // return target[property] ? target[property] : null
+//         return property in target ? target[property] : null
+//     },
+//     set: function (target, property, value) {
+//         console.log("target", target)
+//         console.log("property", property)
+//         console.log("value", value)
+//
+//         if (property === "age" && value < 18) {
+//             value = 18
+//         }
+//         if (property === "type" && ["user", "admin", "author", "teacher"].includes(value.toLowerCase())) {
+//             target[property] = value
+//         } else {
+//             throw new Error("this value is not valid")
+//         }
+//
+//         target[property] = value
+//     }
+// })
+//
+// user.type = "react"
+//
+// console.log(user.type)
+
+
+let symbol1 = Symbol("symbol 1")
+let symbol2 = Symbol("user id symbol")
+let symbol3 = Symbol()
+let symbol4 = Symbol()
+
+// console.log(symbol1)
+// console.log(symbol2)
+// console.log(symbol3)
+// console.log(symbol4)
+//
+// console.log(typeof symbol1)
+
+let userIdSymbol = Symbol("user id")
+
+let userObject = {
     id: 1,
     firstName: "amir",
     lastName: "kazemi",
-    type: "user"
+    age: 23,
+    [userIdSymbol]: "jkijj-cfeser"
 }
 
-user = new Proxy(user, {
-    get: function (target, property) {
-        console.log(target)
-        console.log(property)
-        // return target[property] ? target[property] : null
-        return property in target ? target[property] : null
-    },
-    set: function (target, property, value) {
-        console.log("target", target)
-        console.log("property", property)
-        console.log("value", value)
+// console.log(userObject[userIdSymbol])
 
-        if (property === "age" && value < 18) {
-            value = 18
-        }
-        if (property === "type" && ["user", "admin", "author", "teacher"].includes(value.toLowerCase())) {
-            target[property] = value
-        } else {
-            throw new Error("this value is not valid")
-        }
-
-        target[property] = value
-    }
-})
-
-user.type = "react"
-
-console.log(user.type)
+for (let item in userObject) {
+    console.log(item)
+}
 
 
 
