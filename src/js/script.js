@@ -1257,11 +1257,31 @@
 // console.log("user with proxy: ", userProxy.firstName)
 
 
+// let user = {
+//     id: 1,
+//     firstName: "amir",
+//     lastName: "kazemi",
+//     age: 23
+// }
+//
+// user = new Proxy(user, {
+//     get: function (target, property) {
+//         console.log(target)
+//         console.log(property)
+//         // return target[property] ? target[property] : null
+//         return property in target ? target[property] : null
+//     }
+// })
+//
+// console.log("user object: ", user.firstName)
+// console.log("user proxy: ", user.firstName)
+
+
 let user = {
     id: 1,
     firstName: "amir",
     lastName: "kazemi",
-    age: 23
+    type: "user"
 }
 
 user = new Proxy(user, {
@@ -1270,11 +1290,32 @@ user = new Proxy(user, {
         console.log(property)
         // return target[property] ? target[property] : null
         return property in target ? target[property] : null
+    },
+    set: function (target, property, value) {
+        console.log("target", target)
+        console.log("property", property)
+        console.log("value", value)
+
+        if (property === "age" && value < 18) {
+            value = 18
+        }
+        if (property === "type" && ["user", "admin", "author", "teacher"].includes(value.toLowerCase())) {
+            target[property] = value
+        } else {
+            throw new Error("this value is not valid")
+        }
+
+        target[property] = value
     }
 })
 
-console.log("user object: ", user.firstName)
-console.log("user proxy: ", user.firstName)
+user.type = "react"
+
+console.log(user.type)
+
+
+
+
 
 
 
