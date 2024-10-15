@@ -1343,37 +1343,45 @@
 // }
 
 
-let userIdSymbol = Symbol.for("user id")
+// let userIdSymbol = Symbol.for("user id")
+//
+// let userObject = {
+//     id: 1,
+//     firstName: "amir",
+//     lastName: "kazemi",
+//     age: 23,
+//     [userIdSymbol]: "jkijj-cfeser"
+// }
+//
+// console.log(userObject[Symbol.for("user id")])
 
-let userObject = {
-    id: 1,
-    firstName: "amir",
-    lastName: "kazemi",
-    age: 23,
-    [userIdSymbol]: "jkijj-cfeser"
+
+let id = 1
+let userName = "amir"
+let age = 23
+let job = "manager"
+
+let user = {
+    id,
+    userName,
+    age,
+    job
 }
 
-console.log(userObject[Symbol.for("user id")])
+console.log(user)
 
+const userMaker = (firstName, lastName, age) => {
+    let newUser = {
+        firstName,
+        lastName,
+        age
+    }
+    return newUser
+}
 
+let userAmir = userMaker("amir", "kazemi", 23)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(userAmir)
 
 
 
