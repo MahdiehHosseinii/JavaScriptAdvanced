@@ -1314,19 +1314,36 @@
 // console.log(user.type)
 
 
-let symbol1 = Symbol("symbol 1")
-let symbol2 = Symbol("user id symbol")
-let symbol3 = Symbol()
-let symbol4 = Symbol()
-
+// let symbol1 = Symbol("symbol 1")
+// let symbol2 = Symbol("user id symbol")
+// let symbol3 = Symbol()
+// let symbol4 = Symbol()
+//
 // console.log(symbol1)
 // console.log(symbol2)
 // console.log(symbol3)
 // console.log(symbol4)
 //
 // console.log(typeof symbol1)
+//
+// let userIdSymbol = Symbol("user id")
+//
+// let userObject = {
+//     id: 1,
+//     firstName: "amir",
+//     lastName: "kazemi",
+//     age: 23,
+//     [userIdSymbol]: "jkijj-cfeser"
+// }
+//
+// console.log(userObject[userIdSymbol])
+//
+// for (let item in userObject) {
+//     console.log(item)
+// }
 
-let userIdSymbol = Symbol("user id")
+
+let userIdSymbol = Symbol.for("user id")
 
 let userObject = {
     id: 1,
@@ -1336,11 +1353,11 @@ let userObject = {
     [userIdSymbol]: "jkijj-cfeser"
 }
 
-// console.log(userObject[userIdSymbol])
+console.log(userObject[Symbol.for("user id")])
 
-for (let item in userObject) {
-    console.log(item)
-}
+
+
+
 
 
 
